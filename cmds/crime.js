@@ -2,7 +2,7 @@ const discord = require('discord.js');
 const db = require('quick.db');
 const talked = talkedRecently;
 module.exports.run = (bot, message, args, prefix) => {
-        let bal = db.get(`balance${message.author.id}${message.guild.id}`);
+        let bal = db.get(`balance_${message.guild.id}_${message.author.id}`);
         if(bal == null) bal = 0;
         let zarobek = getRandomInt(100, 200);
         const wynik = bal + zarobek;
@@ -27,16 +27,16 @@ module.exports.run = (bot, message, args, prefix) => {
             e.setDescription(`Ukradłeś samochód i sprzedałeś go za ${zarobek}🦊 \n Posiadasz teraz ${wynik}🦊`)
         }
         message.channel.send(e);
-        db.set(`balance_${message.author.id}_${message.guild.id}`, wynik);
+        db.set(`balance_${message.guild.id}_${message.author.id}`, wynik);
     } else {
         const strata = getRandomInt(25, 50);
-        let w = db.get(`balance_${message.author.id}_${message.guild.id}`) - strata;
+        let w = db.get(`balance_${message.guild.id}_${message.author.id}`) - strata;
         if(w < 0) w = 0; 
         const e = new discord.MessageEmbed()
         .setTitle('Kradzież')
         .setColor('#ff4524')
         .setDescription(`Niestety zostałeś złapany i musisz zapłacić ${strata}🦊 grzywny.`)
-        db.set(`balance_${message.author.id}_${message.guild.id}`, w);
+        db.set(`balance_${message.guild.id}_${message.author.id}`, w);
         message.channel.send(e);
     }
         talked.add(message.author.id);
