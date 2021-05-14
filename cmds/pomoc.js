@@ -3,7 +3,7 @@ const discord = require('discord.js');
 module.exports.run = (bot, message, args , prefix) => {
     const e = new discord.MessageEmbed()
     .setTitle('Pomoc')
-    .setDescription('8ball \n ankieta \n avatar \n balance \n ban \n clear \n config \n crime \n cytat \n eval \n globalban \n hacker \n invite \n kick \n level \n lis \n obraz \n pomoc \n ruletka \n slowmode \n top \n unwarn \n warn \n work')
+    .setDescription(`${prefix}8ball \n ${prefix}ankieta \n ${prefix}avatar \n ${prefix}balance \n ${prefix}ban \n ${prefix}clear \n ${prefix}config \n ${prefix}crime \n ${prefix}cytat \n ${prefix}eval \n ${prefix}globalban \n ${prefix}hacker \n ${prefix}invite \n ${prefix}kick \n ${prefix}level \n ${prefix}lis \n ${prefix}obraz \n ${prefix}pomoc \n ${prefix}ruletka \n ${prefix}slowmode \n ${prefix}top \n ${prefix}unwarn \n ${prefix}warn \n work`)
     message.channel.send(e);
 };
 
