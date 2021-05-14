@@ -4,7 +4,8 @@
   "description": "LiseqBot",
   "main": "bot.js",
   "scripts": {
-    "test": "node bot.js"
+    "test": "node bot.js",
+    "start": "node bot.js"
   },
   "author": "PolskiLisio",
   "license": "ISC",
