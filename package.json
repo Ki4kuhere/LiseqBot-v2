@@ -1,0 +1,16 @@
+{
+  "name": "liseqbot",
+  "version": "1.0.0",
+  "description": "LiseqBot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "PolskiLisio",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "quick.db": "^7.1.3",
+    "shortid": "^2.2.16"
+  }
+}
