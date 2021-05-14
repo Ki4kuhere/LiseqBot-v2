@@ -2,7 +2,7 @@ const discord = require('discord.js');
 
 module.exports.run = (bot, message, args, prefix) => {
         if(message.member.hasPermission('ADMINISTRATOR')) {
-            if(message.mentions.users.first()) {
+            if(message.mentions.users.first() || !message.mentions.users.first().bot) {
                 if(args[0]) {
                     const reason = args.slice(0).join(" ");
                     const e = new discord.MessageEmbed()
@@ -10,19 +10,19 @@ module.exports.run = (bot, message, args, prefix) => {
                     .setDescription(`Pomyślnie zbanowałeś osobę o nicku ${message.mentions.users.first().tag} z powodem ${reason}.`)
                     .setColor('#5eff00')
                   message.channel.send(e);
-                  message.mentions.users.first().ban(reason);
+                  message.mentions.members.first().ban(reason);
                 } else {
                     const e = new discord.MessageEmbed()
                     .setTitle('Ban')
                     .setDescription(`Pomyślnie zbanowałeś osobę o nicku ${message.mentions.users.first().tag} bez powodu.`)
                     .setColor('#5eff00')
                     message.channel.send(e)
-                    message.mentions.users.first().ban("Brak powodu");
+                    message.mentions.members.first().ban("Brak powodu");
                 }
             } else {
                 const e = new discord.MessageEmbed()
                 .setTitle('Ban')
-                .setDescription('Aby użyć tej komendy musisz kogoś oznaczyć!')
+                .setDescription('Aby użyć tej komendy musisz oznaczyć użytkownika!')
                 .setColor('#ff2200')
                 message.channel.send(e);
             }

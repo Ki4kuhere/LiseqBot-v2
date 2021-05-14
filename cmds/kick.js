@@ -10,14 +10,14 @@ module.exports.run = (bot, message, args, prefix) => {
                     .setDescription(`Pomyślnie wyrzuciłeś osobę o nicku ${message.mentions.users.first().tag} z powodem ${reason}.`)
                     .setColor('#5eff00')
                   message.channel.send(e);
-                  message.mentions.users.first().kick(reason);
+                  message.mentions.members.first().kick(reason);
                 } else {
                     const e = new discord.MessageEmbed()
                     .setTitle('Kick')
                     .setDescription(`Pomyślnie wyrzuciłeś osobę o nicku ${message.mentions.users.first().tag} bez powodu.`)
                     .setColor('#5eff00')
                     message.channel.send(e)
-                    message.mentions.users.first().kick("Brak powodu")
+                    message.mentions.members.first().kick("Brak powodu")
                 }
             } else {
                 const e = new discord.MessageEmbed()
