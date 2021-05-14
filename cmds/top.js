@@ -7,13 +7,7 @@ module.exports.run = (bot, message, args, prefix) => {
         for(i = 0; i < balance.length; i++) {
           if(i == 10) break;
           const u = bot.users.cache.get(balance[i].ID.split('_')[2]) || "invalid-user";
-          if(i != 0) {
             content += `${i + 1}.${u.username} • ${db.get(`balance_${message.guild.id}_${u.id}`)}🦊 \n`
-          } else {
-            if(u == undefined  || u == null) u = 'Nieprawidłowy użytkownik'
-            content += `<a:crownemoji3:842545490028396556> 1.${u.username} • ${db.get(`balance_${message.guild.id}_${u.id}`)}🦊 \n`
-
-           }
         }
         const e = new discord.MessageEmbed()
         .setDescription(content || "Brak danych!")
