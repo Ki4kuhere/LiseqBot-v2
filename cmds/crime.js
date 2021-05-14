@@ -7,7 +7,7 @@ module.exports.run = (bot, message, args, prefix) => {
         let zarobek = getRandomInt(100, 200);
         const wynik = bal + zarobek;
         const odp = getRandomInt(1, 6);
-        const win = getRandomInt(1, 2);
+        const win = getRandomInt(1, 3);
         if(win == 1) {
         const e = new discord.MessageEmbed()
         .setTitle('Kradzież')
