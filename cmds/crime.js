@@ -30,7 +30,7 @@ module.exports.run = (bot, message, args, prefix) => {
         db.set(`balance${message.author.id}${message.guild.id}`, wynik);
     } else {
         const strata = getRandomInt(25, 50);
-        const w = db.get(`balance${message.author.id}${message.guild.id}`) - strata;
+        let w = db.get(`balance${message.author.id}${message.guild.id}`) - strata;
         if(w < 0) w = 0; 
         const e = new discord.MessageEmbed()
         .setTitle('Kradzież')
