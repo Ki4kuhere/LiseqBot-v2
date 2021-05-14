@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args, prefix) => {
         const wynik = bal + zarobek;
         const odp = getRandomInt(1, 6);
         const win = getRandomInt(1, 3);
-        if(win == 1) {
+        if(win == 1 || win == 2) {
         const e = new discord.MessageEmbed()
         .setTitle('Kradzież')
         .setColor('#45f542')
