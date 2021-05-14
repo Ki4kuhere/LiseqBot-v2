@@ -16,7 +16,7 @@ function cytat() {
     min = Math.ceil(1);
     max = Math.floor(6);
     const wynik = Math.floor(Math.random() * (max - min + 1)) + min;
-        if(wynik = 1) {
+        if(wynik == 1) {
             let string = "Jestem lisio, oto ja!";
             return string;
         } else if(wynik == 2) {
