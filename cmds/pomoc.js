@@ -10,4 +10,5 @@ module.exports.run = (bot, message, args , prefix) => {
 
 module.exports.help = {
 name: "pomoc",
+aliases: ['help']
 };
