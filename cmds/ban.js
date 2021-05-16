@@ -10,14 +10,14 @@ module.exports.run = (bot, message, args, prefix) => {
                     .setDescription(`Pomyślnie zbanowałeś osobę o nicku ${message.mentions.users.first().tag} z powodem ${reason}.`)
                     .setColor('#5eff00')
                   message.channel.send(e);
-                  message.mentions.members.first().ban(reason);
+                  message.mentions.members.first().ban({reason: reason});
                 } else {
                     const e = new discord.MessageEmbed()
                     .setTitle('Ban')
                     .setDescription(`Pomyślnie zbanowałeś osobę o nicku ${message.mentions.users.first().tag} bez powodu.`)
                     .setColor('#5eff00')
                     message.channel.send(e)
-                    message.mentions.members.first().ban("Brak powodu");
+                    message.mentions.members.first().ban({reason: "Brak powodu"});
                 }
             } else {
                 const e = new discord.MessageEmbed()
