@@ -9,6 +9,8 @@ module.exports.run = (bot, message, args, prefix) => {
         } else if(args[0] == "remove") {
             db.set(`globalban${args[1]}`, "nie");
             message.channel.send("Global ban został pomyślnie usunięty.")
+        } else {
+            message.channel.send("Podaj  add lub remove")
         }
 };
 

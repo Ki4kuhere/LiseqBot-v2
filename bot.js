@@ -220,6 +220,7 @@ fs.readdir('./cmds', (err, files) => {
 
 //command handler
 bot.on("message", async (message) => {
+    if(message.guild.id == 775065153459847239) return;
     db.set(`talkedrecently`, talkedRecently);
     if (db.get(`globalban${message.author.id}`) == "tak") return;
     if (message.channel.type === 'dm') return;

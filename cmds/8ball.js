@@ -3,8 +3,7 @@ const discord = require('discord.js');
 
 module.exports.run = (bot, message, args, prefix) => {
         let i = getRandomInt(1, 4)
-        const pytanie = message.content.replace(bot.ustawienia.get(message.guild.id).prefix, "")
-        const pytanie1 = pytanie.replace("8ball", "")
+        const pytanie = args.join(" ")
         const e = new discord.MessageEmbed()
         .setTitle(`8ball | ${pytanie1}`)
         if(i == 1) {

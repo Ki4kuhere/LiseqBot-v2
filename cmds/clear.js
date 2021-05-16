@@ -10,6 +10,7 @@ module.exports.run = async(bot, message, args, prefix) => {
             return;
         }
         if(args[0]) {
+            if(args[0] >= 1 && args[0] <= 100) {
             message.channel.bulkDelete(Number.parseInt(args[0]));
             const embed = new discord.MessageEmbed()
             .setTitle('Clear')
@@ -24,7 +25,14 @@ module.exports.run = async(bot, message, args, prefix) => {
             .setTitle('Nieprawidlowe uzycie')
             .setDescription('Podales nieprawidlową liczbę wiadomosci! \n Prawidlowe uzycie: `l!clear <messages>`')
             .setColor('#fc1803')
-            message.channel.send(embed)
+            message.channel.send(embed);
+        }
+        } else {
+            const embed = new discord.MessageEmbed()
+            .setTitle('Nieprawidlowe uzycie')
+            .setDescription('Podales nieprawidlową liczbę wiadomosci! \n Prawidlowe uzycie: `l!clear <messages>`')
+            .setColor('#fc1803')
+            message.channel.send(embed);
         }
 };
 

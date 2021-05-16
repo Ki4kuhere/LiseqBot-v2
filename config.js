@@ -1,5 +1,5 @@
 module.exports = {
     default_prefix: "l!",
-    token: "ODM0ODQ5NjI5MjU0MDU4MDM2.YIG4Tg.wGgIA_yKaF24MqiuDxVxPUZfAWM",
+    token: "NzkyNDg2OTA5OTU1ODAxMTEw.X-ea8w.9TRzm_5qBbsDYNOhFRlKrDttLY4",
     ownerid: 449903383604625408
 }

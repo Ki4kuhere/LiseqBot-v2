@@ -10,8 +10,8 @@ module.exports.run = async(bot, message, args, prefix) => {
             .setColor('#20fc03')
             const msg = await message.channel.send(embed);
             db.set(`ankieta${id}`, msg.id); 
-            msg.react('✔️');
-            msg.react('❌');
+            msg.react('775412540439920640');
+            msg.react('775407239790854214');
         } else {
             const embed = new discord.MessageEmbed()
             .setTitle('Ankiety')
@@ -23,5 +23,5 @@ module.exports.run = async(bot, message, args, prefix) => {
 
 module.exports.help = {
     name: "ankieta",
-    aliases: ['survay']
+    aliases: ['poll']
 };
