@@ -2,7 +2,8 @@ const discord = require('discord.js');
 
 module.exports.run = (bot, message, args, prefix) => {
     if(message.member.hasPermission('ADMINISTRATOR')) {
-        if(args[0]) {
+        const czas = parseInt(args[0]);
+        if(args[0] && Number.isInteger(parseInt) && !Number.isNaN(czas)) {
              message.channel.setRateLimitPerUser(args[0]);
     let embed2 = new discord.MessageEmbed()
     .setTitle('Slowmode!')
@@ -12,7 +13,7 @@ module.exports.run = (bot, message, args, prefix) => {
          } else {
             const embed = new discord.MessageEmbed()
             .setTitle("Nieprawidłowe użycie.")
-            .setDescription("Nie wprowadziłeś liczby sekund na którą ma być ustawiony slowmode!")
+            .setDescription("Nie wprowadziłeś prawidłowej liczby sekund na którą ma być ustawiony slowmode!")
            .setColor("#ff2200")
            message.channel.send(embed);
          }

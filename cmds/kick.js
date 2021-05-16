@@ -3,7 +3,7 @@ const discord = require('discord.js');
 module.exports.run = (bot, message, args, prefix) => {
         if(message.member.hasPermission('ADMINISTRATOR')) {
             if(message.mentions.users.first()) {
-                if(args[0]) {
+                if(args[1]) {
                     const reason = args.slice(0).join(" ");
                     const e = new discord.MessageEmbed()
                     .setTitle('Kick')

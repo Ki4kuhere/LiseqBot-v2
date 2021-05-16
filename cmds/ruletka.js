@@ -3,10 +3,10 @@ const db = require('quick.db');
 module.exports.run = (bot, message, args, prefix) => {
         if(args[0] && args[0] != 0) {   
             const stawka = parseInt(args[0]);
-            if(Number.isNaN(stawka) || stawka < 0) {
+            if(Number.isNaN(stawka) || stawka < 0 || !Number.isInteger(stawka)) {
                 const e = new discord.MessageEmbed()
                 .setTitle('Ruletka')
-                .setDescription('Podaj prawidłową kwote! \n Kwota nie może być liczbą ujemną i musi wynosić tyle ile masz!')
+                .setDescription('Podaj prawidłową kwote! \n Kwota musi być liczbą stałą np 1 albo 2. Musisz posiadać tą kwote.')
                 .setColor('#ff4524')
                 .setFooter(`${prefix}ruletka <kwota>`)
                 message.channel.send(e);

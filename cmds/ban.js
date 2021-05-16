@@ -3,7 +3,7 @@ const discord = require('discord.js');
 module.exports.run = (bot, message, args, prefix) => {
         if(message.member.hasPermission('ADMINISTRATOR')) {
             if(message.mentions.users.first() || !message.mentions.members.first().bot) {
-                if(args[0]) {
+                if(args[1]) {
                     const reason = args.slice(0).join(" ");
                     const e = new discord.MessageEmbed()
                     .setTitle('Ban')
@@ -17,7 +17,7 @@ module.exports.run = (bot, message, args, prefix) => {
                     .setDescription(`Pomyślnie zbanowałeś osobę o nicku ${message.mentions.users.first().tag} bez powodu.`)
                     .setColor('#5eff00')
                     message.channel.send(e)
-                    message.mentions.first().ban("Brak powodu");
+                    message.mentions.members.first().ban("Brak powodu");
                 }
             } else {
                 const e = new discord.MessageEmbed()
