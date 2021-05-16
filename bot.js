@@ -6,10 +6,9 @@ const fs = require('fs');
 global.talkedRecently = new Set();
 
 const activities = [
-    "Wersja 2.0.1 już dostępna!",
+    "Wersja 2.0.2 już dostępna!",
     "Aktualizuje się..",
     "Uczy się...",
-    "Nowe komendy!",
   ];
 
 bot.on("ready", () => {
