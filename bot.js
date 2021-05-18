@@ -224,6 +224,7 @@ bot.on("message", async (message) => {
     if (message.channel.type === 'dm') return;
     let prefix = db.get(`prefix${message.guild.id}`);
     if (prefix == null) prefix = config.default_prefix;
+    if(message.content.startsWith(prefix)) {
     const args = message.content.split(/\s+/g);
     const command = args.shift().slice(prefix.length).toLowerCase();
     const cmd = bot.cmds.get(command) || bot.cmds.find(a => a.help.aliases && a.help.aliases.includes(command));
@@ -244,6 +245,7 @@ bot.on("message", async (message) => {
             cmd.run(bot, message, args, prefix);
         }
     } else {}
+}
 });
 
 //bot logging
